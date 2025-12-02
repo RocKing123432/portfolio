@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif:
+    overflow-x: hidden;
+    transition: background 1s ease;
+    animation: bgChange 10s infinite alternate;
+    
+}
+
+/* Background color-changing animation */
+@keyframes bgChange {
+    0% { background: #c8e6c9; }
+    25% { background: #ffe0b2; }
+    50% { background: #bbdefb; }
+    75% { background: #f8bbd0; }
+    100% { background: #e1bee7; }
+}
+
+/* Initial animation when entering the website */
+.start-animation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 999;
+    animation: reveal 1s forwards;
+}
+
+@keyframes reveal {
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* General containers */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Fade animations */
+.fade-in { animation: fade 1.5s; }
+.fade-in2 { animation: fade 2.2s; }
+.fade-in3 { animation: fade 3s; }
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide-down animation */
+.slide-down {
+    animation: slideDown 1.2s;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header with profile */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 3px solid #333;
+}
+
+/* Pop-in pic animation */
+.pop-in {
+    animation: popIn 1s ease-out;
+}
+@keyframes popIn {
+    from { transform: scale(0.4); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Glow name effect */
+.glow {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px black; }
+    to { text-shadow: 0 0 15px black; }
+}
+
+/* Slider */
+.slider {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-top: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    transition: 1s ease;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #222;
+    color: white;
+    text-align: left;
+    display: grid;
+    gap: 10px;
+    border-radius: 15px 15px 0 0;
+}
+
+.footer i {
+    margin-right: 10px;
+    color: #ffcc00;
+}
+You sent
+/* AUTO-SWIPING SLIDER (2 seconds) */
+let index = 0;
+const slides = document.getElementById("slideContainer");
+const totalSlides = 5;
+
+function autoSlide() {
+    index = (index + 1) % totalSlides;
+    slides.style.transform = "translateX(" + (-index * 100) + "%)";
+}
+
+setInterval(autoSlide, 2000); // every 2 seconds
+Sent 1m ago
